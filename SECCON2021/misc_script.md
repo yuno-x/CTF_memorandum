@@ -31,7 +31,8 @@ $ ls -l flag.txt small.txt
 -rw-r--r-- 1 yuno yuno     3276 Nov 12  1995 small.txt
 ```
 
-The size of "small.txt" is 3,276 byte, on the other hand the size of flag.txt is 67,108,968 byte very larger than "small.txt".
+The size of "small.txt" is 3,276 byte, on the other hand the size of "flag.txt" is 67,108,968 byte.
+So we can see "flag.txt" is very larger than "small.txt".
 The content of "small.txt" is as follows.
 
 ```
@@ -45,7 +46,7 @@ As this problem, we must remove "<script>" from a file again and again.
 In my solution, firstly, read characters one by one.
 For deleting "<script>", when you read a character '>' then compare strings before '>' and "<script>" in case insensitive,
 and if they matched, delete string "<script>".
-After that, continue read characters, and return first, continue until EOF.  
+After that, continue read characters, and return first, continue this until EOF.  
 If you do above, in this exported file, no "<script>" are contained.
 
 In C language, a code is as follows.
@@ -134,7 +135,7 @@ user	0m8.761s
 sys	0m0.084s
 ```
 
-I use a list named "flag" instead of strings in python3 program because of running time is very long by coping strings repeatedly if you use strings.
-However, we can see a program made by C language is very faster than a program made by python3.
+I use a list named "flag" instead of strings in python3 program because of running time is very long by copying strings repeatedly if you use strings.
+However, as we thought, we can see a program made by C language is very faster than a program made by python3.
 
 It is all of my solution for this problem.
