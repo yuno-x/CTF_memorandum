@@ -87,6 +87,16 @@ In C language, a code is as follows.
         return	0;
     }
 
+
+    time ./rmscript flag.txt 
+    SECCON{sanitizing_is_not_so_good><_escaping_is_better_iPt><SCript<ScrIpT<scRIp<scRI<Sc<scr!pt>}
+
+
+    real	0m0.753s
+    user	0m0.457s
+    sys	0m0.048s
+
+
 And in python3, a code is as follows.
 
     data = open( 'flag.txt' ).read()
@@ -101,5 +111,17 @@ And in python3, a code is as follows.
             del( flag[-wordlen:] )
 
     print( ''.join( flag ) )
+
+
+    time python3 rmscript.py 
+    SECCON{sanitizing_is_not_so_good><_escaping_is_better_iPt><SCript<ScrIpT<scRIp<scRI<Sc<scr!pt>}
+
+
+    real	0m8.846s
+    user	0m8.761s
+    sys	0m0.084s
+
+So we can see a program made by C language is very faster than a program made by python3.
+I use a list named "flag" instead of strings in python3 program because of running time is very long by coping strings repeatedly if you use strings.
 
 It is all of my solution for this problem.
