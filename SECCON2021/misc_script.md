@@ -48,45 +48,46 @@ In C language, a code is as follows.
     #include <stdlib.h>
     #include <string.h>
 
-    int
-        main( int argc, char **argv )
+```
+int
+    main( int argc, char **argv )
+{
+    if( argc < 2 )
     {
-        if( argc < 2 )
-        {
-            return	-1;
-        }
-
-        char	*stack = (char*)malloc( 1280000000 );
-        size_t	idx = 0, word_idx;
-
-        char	word[] = "<SCRIPT>";
-        int	wordlastidx = strlen( word ) - 1;
-
-        FILE	*fp = fopen( argv[1], "rb" );
-        int	c;
-        while( ( c = fgetc( fp ) ) != EOF )
-        {
-            stack[idx] = c;
-            idx++;
-
-            if( c == word[wordlastidx] && idx > wordlastidx )
-            {
-                stack[idx] = '\0';
-                if( strcasecmp( word, &stack[idx - wordlastidx - 1] ) == 0 )
-                {
-                    idx -= wordlastidx + 1;
-                }
-            }
-        }
-        stack[idx] = '\0';
-
-        printf( "%s\n", stack );
-
-        free( stack );
-
-        return	0;
+        return	-1;
     }
 
+    char	*stack = (char*)malloc( 1280000000 );
+    size_t	idx = 0, word_idx;
+
+    char	word[] = "<SCRIPT>";
+    int	wordlastidx = strlen( word ) - 1;
+
+    FILE	*fp = fopen( argv[1], "rb" );
+    int	c;
+    while( ( c = fgetc( fp ) ) != EOF )
+    {
+        stack[idx] = c;
+        idx++;
+
+        if( c == word[wordlastidx] && idx > wordlastidx )
+        {
+            stack[idx] = '\0';
+            if( strcasecmp( word, &stack[idx - wordlastidx - 1] ) == 0 )
+            {
+                idx -= wordlastidx + 1;
+            }
+        }
+    }
+    stack[idx] = '\0';
+
+    printf( "%s\n", stack );
+
+    free( stack );
+
+    return	0;
+}
+```
    
 
     time ./rmscript flag.txt 
