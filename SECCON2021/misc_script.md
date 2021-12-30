@@ -135,7 +135,7 @@ sys	0m0.084s
 ```
 
 I use a list named "flag" instead of strings in python3 program because of running time is very long by copying strings repeatedly if you use strings.
-A python3 code is less line than C language code.
+A python3 code has less lines than C language code.
 However, as we thought, we can see a program made by C language is very faster than a program made by python3.
 
 It is all of my solution for this problem.
