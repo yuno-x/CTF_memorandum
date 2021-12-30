@@ -121,7 +121,7 @@ And in python3, a code is as follows.
     user	0m8.761s
     sys	0m0.084s
 
-So we can see a program made by C language is very faster than a program made by python3.
 I use a list named "flag" instead of strings in python3 program because of running time is very long by coping strings repeatedly if you use strings.
+However, we can see a program made by C language is very faster than a program made by python3.
 
 It is all of my solution for this problem.
