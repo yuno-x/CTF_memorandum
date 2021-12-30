@@ -88,6 +88,7 @@ In C language, a code is as follows.
     }
 
 
+
     time ./rmscript flag.txt 
     SECCON{sanitizing_is_not_so_good><_escaping_is_better_iPt><SCript<ScrIpT<scRIp<scRI<Sc<scr!pt>}
 
@@ -111,6 +112,7 @@ And in python3, a code is as follows.
             del( flag[-wordlen:] )
 
     print( ''.join( flag ) )
+
 
 
     time python3 rmscript.py 
